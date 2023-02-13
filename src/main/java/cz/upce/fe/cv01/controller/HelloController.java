@@ -1,9 +1,6 @@
 package cz.upce.fe.cv01.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -16,5 +13,10 @@ public class HelloController {
     @GetMapping("/path/{message}")
     public String helloPathParams(@PathVariable String message) {
         return "Hello with path params: " + message;
+    }
+
+    @GetMapping("/query")
+    public String helloQueryParams(@RequestParam String message) {
+        return "Hello with query params: " + message;
     }
 }
