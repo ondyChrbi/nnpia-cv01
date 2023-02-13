@@ -4,7 +4,6 @@ import cz.upce.fe.cv01.dto.SimpleBody;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1")
 public class HelloController {
     @GetMapping("")
     public String helloWorld() {
