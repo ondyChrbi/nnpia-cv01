@@ -1,5 +1,6 @@
 package cz.upce.fe.cv01.controller;
 
+import cz.upce.fe.cv01.dto.SimpleBody;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,5 +19,10 @@ public class HelloController {
     @GetMapping("/query")
     public String helloQueryParams(@RequestParam String message) {
         return "Hello with query params: " + message;
+    }
+
+    @GetMapping("/body")
+    public String helloRequestBody(@RequestBody SimpleBody body) {
+        return "Hello with request body " + body.toString();
     }
 }
